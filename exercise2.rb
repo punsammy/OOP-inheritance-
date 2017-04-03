@@ -56,12 +56,35 @@ end
 
 class MathGenius < Multilinguist
 
-def report_total(value)
-  sum = 0
-  value.each do |v|
-    sum += v
+
+  def report_total(value)
+    sum = 0
+    value.each do |v|
+      sum += v
+    end
+    msg=say_in_local_language("The total is:")
+    return msg+sum.to_s
   end
-  msg=say_in_local_language("The total is:")
-  return msg+sum.to_s
+
+
+
 end
+
+class QuoteChild < Multilinguist
+  @@quotes = []
+
+  def fav_quote(quote)
+    @@quotes << quote
+  end
+
+  def select_quote
+    return say_in_local_language(@@quotes.sample)
+  end
 end
+
+me = QuoteChild.new
+puts me.travel_to("india")
+puts me.fav_quote("Roses are Red")
+puts me.fav_quote("Roses are Black")
+puts me.fav_quote("Roses are Blue")
+puts me.select_quote
