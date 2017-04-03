@@ -52,3 +52,16 @@ class Multilinguist
     json_response['translationText']
   end
 end
+
+
+class MathGenius < Multilinguist
+
+def report_total(value)
+  sum = 0
+  value.each do |v|
+    sum += v
+  end
+  msg=say_in_local_language("The total is:")
+  return msg+sum.to_s
+end
+end
