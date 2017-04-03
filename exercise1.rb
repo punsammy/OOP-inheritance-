@@ -49,4 +49,4 @@ puts Christina.learn
 #calling a method from the Instructor.class won't work because these classes are seperate
 #The methods within each class are instance methods and will only apply for the instance variables within that class
 #The Student class and the Instructor class both inherit from the Person class. If the method was in the person class it would be possible
-puts Christina.teach
+# puts Christina.teach
